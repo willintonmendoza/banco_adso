@@ -70,7 +70,11 @@ switch ($opcion) {
 		
          		
 			
-				 if ($retiro <= 0) {
+				 if (!ctype_digit($retiro)) {
+
+                    echo ("Error: solo puede ingresar números.\n");
+
+                } elseif ($retiro <= 0) {
 
            			 echo ("El valor debe ser mayor que 0\n");
 					 echo ("\n");
@@ -134,7 +138,11 @@ switch ($opcion) {
 
             $transferencia = readline("Ingrese el monto a transferir: ");
 
-            if ($transferencia <= 0) {
+            if (!ctype_digit($transferencia)) {
+
+                echo ("Error: solo puede ingresar números.\n");
+
+            } elseif ($transferencia <= 0) {
 
                 echo ("El valor debe ser mayor que 0.\n");
 
